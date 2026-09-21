@@ -59,18 +59,6 @@
             <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ true }}">
               <video ref="{{ videoRef }}" src="{{ videoSrc }}" poster="{{ posterSrc }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;"></video>
             </sc-if>
-            <sc-if value="{{ showPoster }}" hint-placeholder-val="{{ true }}">
-              <button type="button" onClick="{{ startPlayback }}" aria-label="Play the TiVo IPTV video" style="position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; background:#0C0E10; cursor:pointer; display:block;">
-                <img src="../assets/tivo-video-poster.png" alt="TiVo streaming interface on a TV" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
-                <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,10,12,0.08) 0%,rgba(8,10,12,0.52) 100%);"></span>
-                <span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:inline-flex; align-items:center; gap:12px; padding:14px 26px 14px 20px; border-radius:999px; border:1px solid rgba(240,235,226,0.28); background:rgba(16,18,20,0.72); backdrop-filter:blur(10px); color:#F0EBE2; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase;">
-                  <span style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:#D8B34A; color:#1B1A15; font-size:13px;">▶</span>Play video
-                </span>
-              </button>
-            </sc-if>
-            <sc-if value="{{ isPlaying }}">
-              <iframe src="{{ driveEmbed }}" allow="autoplay; fullscreen" allowFullScreen="{{ true }}" title="TiVo Managed IPTV video" style="position:absolute; inset:0; width:100%; height:100%; border:0; display:block;"></iframe>
-            </sc-if>
             <sc-if value="{{ noVideo }}">
               <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:24px;">
                 <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#4B5057;">1920 × 1080 · 16:9</div>
@@ -165,7 +153,7 @@
       </div>
     </div>
     <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; font-size:15px;">
-      <a href="./via-agent.html">← Previous · VIA Agent</a>
+      <a href="via-agent.html">← Previous · VIA Agent</a>
       <a href="../index.html#work">All products →</a>
     </div>
     <div style="margin-top:22px; text-align:center; font-size:14px; color:#7C776F;">© 2026 Geethu Rajasekharan · AI Product Manager</div>
@@ -173,10 +161,23 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;videoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://drive.google.com/file/d/1rky6dJs7y_Ff5kOhBUG1V906V4Kj46KA/view?usp=sharing&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero video&quot;},&quot;posterUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero video&quot;},&quot;roleCopy&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;My role&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;videoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://geethu-product-portfolio.netlify.app/uploads/tivo-sizzle.mp4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero video&quot;},&quot;posterUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero video&quot;},&quot;roleCopy&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;My role&quot;}}">
 class Component extends DCLogic {
-  state = { muted: true, playing: false };
-  startPlayback = () => this.setState({ playing: true });
+  state = { muted: true, playing: false, videoFailed: false };
+  onVideoError = () => this.setState({ videoFailed: true });
+  componentDidMount() { this.bindVideo(); }
+  componentDidUpdate() { this.bindVideo(); }
+  bindVideo() {
+    const v = this.videoRef.current;
+    if (!v || v.__errBound) return;
+    v.__errBound = true;
+    v.addEventListener("error", this.onVideoError);
+    clearTimeout(this._stallTimer);
+    this._stallTimer = setTimeout(() => {
+      const el = this.videoRef.current;
+      if (el && el.readyState === 0) this.onVideoError();
+    }, 8000);
+  }
   videoRef = React.createRef();
   toggleMute = () => {
     const next = !this.state.muted;
@@ -204,7 +205,7 @@ class Component extends DCLogic {
     { title: "Hands-on support", body: "Account, support, and marketing teams engaged in scaling each operator's business." }
   ];
   renderVals() {
-    const raw = (this.props.videoUrl ?? "https://drive.google.com/file/d/1rky6dJs7y_Ff5kOhBUG1V906V4Kj46KA/view?usp=sharing").trim();
+    const raw = (this.props.videoUrl ?? "https://geethu-product-portfolio.netlify.app/uploads/tivo-sizzle.mp4").trim();
     const driveMatch = raw.match(/drive\.google\.com\/file\/d\/([\w-]+)/) || (/^[\w-]{20,}$/.test(raw) ? [null, raw] : null);
     const driveId = driveMatch ? driveMatch[1] : "";
     const videoSrc = driveId ? "" : raw;
@@ -214,12 +215,9 @@ class Component extends DCLogic {
       roleCopy, hasRoleCopy: !!roleCopy,
       videoRef: this.videoRef, toggleMute: this.toggleMute,
       muteLabel: this.state.muted ? "Unmute" : "Mute",
-      videoSrc, hasVideo: !!videoSrc, noVideo: !videoSrc && !useIframe,
-      hasDrive: useIframe,
-      showPoster: useIframe && !this.state.playing,
-      isPlaying: useIframe && this.state.playing,
-      startPlayback: this.startPlayback,
-      driveEmbed: driveId ? "https://drive.google.com/file/d/" + driveId + "/preview" : "",
+      videoSrc, hasVideo: !!videoSrc && !this.state.videoFailed,
+      videoFailed: this.state.videoFailed,
+      noVideo: (!videoSrc && !useIframe) || this.state.videoFailed,
       posterSrc: (this.props.posterUrl || "").trim() || undefined,
       tags: this.TAGS, benefits: this.BENEFITS, experience: this.EXPERIENCE,
       scale: this.SCALE
