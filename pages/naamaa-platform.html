@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>window.__IMAGE_SLOT_STATE = "../image-slots.state.json";</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="../image-slot.js"></script>
+<style>
+  body { margin:0; background:#101214; color:#F0EBE2; font-family:'Instrument Sans', Helvetica, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#D8B34A; text-decoration:none; }
+  a:hover { color:#EFCC6E; }
+  * { box-sizing:border-box; }
+</style>
+</helmet>
+
+<div style="background:#101214; min-height:100%;">
+
+  <header style="position:sticky; top:0; z-index:20; background:rgba(16,18,20,0.88); backdrop-filter:blur(10px); border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <a href="../index.html" style="font-size:17px; font-weight:700; letter-spacing:-0.01em; color:#F0EBE2;">Geethu <span style="color:#D8B34A;">Rajasekharan</span></a>
+      <nav style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+        <a href="../index.html" style="color:#B7B2A9;">About</a>
+        <a href="../index.html#work" style="color:#D8B34A;">Products</a>
+        <a href="../index.html#contact" style="display:inline-flex; align-items:center; padding:10px 20px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600;">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="position:relative; overflow:hidden; background:linear-gradient(140deg,#1E2126 0%,#15171A 48%,#101214 100%); border-bottom:1px solid #24282D;">
+    <div style="position:absolute; right:-160px; top:-180px; width:620px; height:620px; border-radius:50%; background:rgba(216,179,74,0.10); filter:blur(20px);"></div>
+    <div style="position:relative; max-width:1180px; margin:0 auto; padding:56px 32px 72px;">
+      <a href="../index.html#work" style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#B7B2A9;">← All products</a>
+      <div style="margin-top:36px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:48px; align-items:center;">
+        <div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#D8B34A;">Digital infrastructure · Parinaamaa.AI</div>
+          <h1 style="margin:18px 0 14px; font-size:clamp(44px,6vw,80px); line-height:0.98; letter-spacing:-0.04em; font-weight:700; color:#F6F2EA;">Naamaa</h1>
+          <p style="margin:0 0 24px; font-size:clamp(19px,2vw,24px); line-height:1.3; font-weight:500; color:#E6DFD2; max-width:30ch; letter-spacing:-0.015em; text-wrap:balance;">Rural service commerce, <em style="color:#D8B34A; font-style:italic;">structured at scale</em>.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
+            <sc-for list="{{ tags }}" as="t" hint-placeholder-count="4">
+              <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">{{ t }}</span>
+            </sc-for>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="https://www.parinaamaa.ai/naamaa.html" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600; font-size:16px;">Visit Naamaa →</a>
+            <a href="#role" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; border:1px solid #3E434A; color:#F6F2EA; font-weight:600; font-size:16px;">My role</a>
+          </div>
+        </div>
+        <div style="background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden;">
+          <div style="position:relative; display:flex;">
+            <video ref="{{ videoRef }}" src="../uploads/via-agent-demo.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="display:block; width:100%; height:auto;"></video>
+            <button type="button" onClick="{{ toggleMute }}" aria-label="{{ muteLabel }}" style="position:absolute; right:14px; bottom:14px; display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border:1px solid rgba(240,235,226,0.24); border-radius:999px; background:rgba(16,18,20,0.66); backdrop-filter:blur(8px); color:#F0EBE2; font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;" style-hover="background:rgba(216,179,74,0.92); color:#1B1A15; border-color:#D8B34A;">{{ muteLabel }}</button>
+          </div>
+        </div>
+      </div>
+      <p style="margin:44px 0 0; max-width:82ch; font-size:17px; line-height:1.7; color:#B7B2A9; text-wrap:pretty;">Temples, community halls, artisans, homestays and SHG units serve real demand every day — offline, undocumented, financially invisible. Naamaa gives that economy digital rails: a catalog, a booking layer, a transaction record, and an identity.</p>
+    </div>
+  </section>
+
+  <section style="background:#141619; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">THE GAP</div>
+      <h2 style="margin:14px 0 36px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:26ch; text-wrap:balance;">Billions in rural service demand. None of it captured.</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:16px;">
+        <sc-for list="{{ gapStats }}" as="s" hint-placeholder-count="3">
+          <div style="position:relative; overflow:hidden; background:#191C20; border:1px solid #282C32; border-radius:24px; padding:32px 28px;">
+            <div style="position:absolute; right:-40px; top:-40px; width:140px; height:140px; border-radius:50%; background:rgba(216,179,74,0.07);"></div>
+            <div style="font-size:clamp(38px,4.4vw,52px); font-weight:700; letter-spacing:-0.045em; color:#D8B34A; line-height:0.95;">{{ s.value }}</div>
+            <p style="margin:14px 0 0; font-size:15px; line-height:1.55; color:#B7B2A9;">{{ s.label }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">WHAT'S MISSING</div>
+    <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:24ch; text-wrap:balance;">The infrastructure gap that holds Bharat back.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:16px;">
+      <sc-for list="{{ missing }}" as="m" hint-placeholder-count="4">
+        <article style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:28px 26px; display:flex; flex-direction:column; gap:10px;">
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; color:#8D8881;">{{ m.num }}</div>
+          <h3 style="margin:0; font-size:19px; letter-spacing:-0.02em; font-weight:700; color:#F6F2EA;">{{ m.title }}</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#B7B2A9;">{{ m.body }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#141619; border-top:1px solid #24282D; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">THE TRANSFORMATION</div>
+      <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">From invisible to infrastructure.</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:14px;">
+        <sc-for list="{{ transformation }}" as="t" hint-placeholder-count="5">
+          <div style="background:#191C20; border:1px solid #282C32; border-radius:20px; padding:24px 22px; display:flex; flex-direction:column; gap:10px;">
+            <div style="width:34px; height:34px; border-radius:50%; border:1px solid #D8B34A; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono', monospace; font-size:12px; color:#D8B34A;">{{ t.num }}</div>
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#F6F2EA; line-height:1.25;">{{ t.title }}</div>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:#9E9A93;">{{ t.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:20px; background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden;">
+        <div style="aspect-ratio:16 / 7;"><image-slot id="nma-flow" shape="rect" style="width:100%; height:100%;" placeholder="Transformation / transaction flow diagram"></image-slot></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="role" style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">My role</div>
+    <h2 style="margin:14px 0 10px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:28ch; text-wrap:balance;">The barrier is onboarding, not technology.</h2>
+    <p style="margin:0 0 32px; font-size:17px; line-height:1.6; color:#A8A49E; max-width:64ch; text-wrap:pretty;">PM Consultant — enterprise onboarding design, self-service flows, market research, roadmap, and techno-commercial documentation.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:16px; align-items:stretch;">
+      <div style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:32px 30px;">
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:500; color:#D8B34A;">What I did</div>
+        <div style="margin-top:20px; display:flex; flex-direction:column; gap:18px;">
+          <sc-for list="{{ didItems }}" as="d" hint-placeholder-count="5">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="flex:0 0 auto; margin-top:7px; width:7px; height:7px; border-radius:50%; background:#D8B34A;"></span>
+              <div style="flex:1 1 auto; min-width:0;">
+                <div style="font-size:16px; font-weight:600; color:#F6F2EA; letter-spacing:-0.01em;">{{ d.title }}</div>
+                <p style="margin:4px 0 0; font-size:15px; line-height:1.55; color:#B7B2A9;">{{ d.body }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="align-self:stretch; min-height:360px; background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden; display:flex;">
+        <image-slot id="nma-onboarding" shape="rect" style="width:100%; height:100%;" placeholder="Onboarding flow screens"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#141619; border-top:1px solid #24282D; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">Product thinking</div>
+      <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">Key product decisions</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr)); gap:16px;">
+        <sc-for list="{{ decisions }}" as="d" hint-placeholder-count="3">
+          <article style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:30px 28px; display:flex; flex-direction:column; gap:12px;">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.08em; color:#D8B34A;">{{ d.num }}</div>
+            <h3 style="margin:0; font-size:20px; letter-spacing:-0.02em; font-weight:700; color:#F6F2EA; line-height:1.25;">{{ d.title }}</h3>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#B7B2A9;">{{ d.body }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">Positioning</div>
+    <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">Precise about what we are.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:16px;">
+      <div style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:30px 28px;">
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:500; color:#D8B34A;">Naamaa is</div>
+        <div style="margin-top:18px; display:flex; flex-direction:column; gap:12px;">
+          <sc-for list="{{ isList }}" as="i" hint-placeholder-count="4">
+            <div style="font-size:16px; line-height:1.5; color:#E6DFD2;">{{ i }}</div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:#15181B; border:1px solid #24282D; border-radius:24px; padding:30px 28px;">
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:500; color:#8D8881;">Not a</div>
+        <div style="margin-top:18px; display:flex; flex-direction:column; gap:12px;">
+          <sc-for list="{{ notList }}" as="n" hint-placeholder-count="4">
+            <div style="font-size:16px; line-height:1.5; color:#8D8881; text-decoration:line-through; text-decoration-color:#3E434A;">{{ n }}</div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#141619; border-top:1px solid #24282D; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">Ecosystem served</div>
+      <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">Every institution that serves Bharat.</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:14px;">
+        <sc-for list="{{ ecosystem }}" as="e" hint-placeholder-count="6">
+          <div style="background: #191C20; border: 1px solid #282C32; border-radius: 20px; padding: 24px 22px">
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#F6F2EA; line-height:1.25;">{{ e.name }}</div>
+            <p style="margin:8px 0 0; font-size:14px; line-height:1.55; color:#9E9A93;">{{ e.detail }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">Outcomes &amp; learnings</div>
+    <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">What it moved.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px;">
+      <sc-for list="{{ outcomes }}" as="o" hint-placeholder-count="3">
+        <div style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:30px 28px; font-size:16px; line-height:1.6; color:#E6DFD2;">{{ o }}</div>
+      </sc-for>
+    </div>
+    <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:12px;">
+      <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:9px 16px; border-radius:999px; border:1px solid #D8B34A; color:#D8B34A;">National Startup Award finalist</span>
+      <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:9px 16px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">Multi-year beta validated</span>
+    </div>
+    <blockquote style="margin:20px 0 0; padding:34px 36px; border:1px solid #2C3036; border-left:3px solid #D8B34A; border-radius:20px; background:linear-gradient(140deg,#20232A 0%,#15171A 100%);">
+      <p style="margin:0; font-size:clamp(17px,1.8vw,21px); line-height:1.55; color:#F0EBE2; letter-spacing:-0.015em; max-width:68ch; text-wrap:pretty;">“Adoption often depends more on onboarding simplicity than product sophistication. A business owner who can set up in 15 minutes will use your product. One who needs a consultant won't.”</p>
+    </blockquote>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:24px 32px 88px;">
+    <div style="background:linear-gradient(140deg,#20232A 0%,#15171A 100%); border:1px solid #2C3036; border-radius:28px; padding:64px 40px; text-align:center;">
+      <h2 style="margin:0 auto 18px; max-width:24ch; font-size:clamp(28px,3.6vw,42px); line-height:1.1; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; text-wrap:balance;">Want the full Naamaa story?</h2>
+      <p style="margin:0 auto 30px; max-width:52ch; font-size:17px; line-height:1.65; color:#B7B2A9;">Happy to walk through the onboarding research, the modular architecture calls, and what adoption actually turned on.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a href="https://www.naamaa.in/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600; font-size:16px;">Visit Naamaa →</a>
+        <a href="../index.html#contact" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; border:1px solid #3E434A; color:#F6F2EA; font-weight:600; font-size:16px;">Get in touch</a>
+      </div>
+    </div>
+    <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; font-size:15px;">
+      <a href="./my-health-node-ai.html">← Previous · My Health Node AI</a>
+      <a href="../index.html#work">All products →</a>
+    </div>
+    <div style="margin-top:22px; text-align:center; font-size:14px; color:#7C776F;">© 2026 Geethu Rajasekharan · AI Product Manager</div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  TAGS = ["Infrastructure platform", "Not a marketplace", "Built for Bharat", "Ready for enterprise"];
+  GAP_STATS = [
+    { value: "650M+", label: "Rural Indians in service-dependent ecosystems" },
+    { value: "~0%", label: "Of rural service transactions digitally structured" },
+    { value: "No rails", label: "No standardized booking or payment layer exists for latent rural commerce" }
+  ];
+  MISSING = [
+    { num: "01", title: "No service catalog", body: "Offerings exist only in memory." },
+    { num: "02", title: "No booking layer", body: "Demand is verbal, untracked." },
+    { num: "03", title: "No transaction record", body: "Revenue is cash, informal, lost." },
+    { num: "04", title: "No digital identity", body: "Providers are invisible to systems." }
+  ];
+  TRANSFORMATION = [
+    { num: "01", title: "Informal demand exists", body: "Unstructured, undocumented, uncaptured." },
+    { num: "02", title: "Naamaa structures it", body: "Service catalog, booking engine, workflows." },
+    { num: "03", title: "Demand becomes a transaction", body: "Confirmed, payable, traceable." },
+    { num: "04", title: "Payment flows digitally", body: "Integrated gateways, UPI, banking rails." },
+    { num: "05", title: "Ecosystem enters the economy", body: "Digital identity, financial access, scale." }
+  ];
+  DID_ITEMS = [
+    { title: "Enterprise onboarding design", body: "Redesigned onboarding for non-technical business owners." },
+    { title: "Self-service flows", body: "Built flows that eliminate the need for a consultant to get started." },
+    { title: "Market research", body: "Mapped the digital infrastructure gap in small and rural business segments." },
+    { title: "Roadmap development", body: "Prioritized features by adoption impact, not technical complexity." },
+    { title: "Third-party integration studies", body: "Evaluated and documented options for payments, logistics, and communications." }
+  ];
+  DECISIONS = [
+    { num: "01", title: "Onboarding simplicity over feature richness", body: "If they can't start, they won't stay." },
+    { num: "02", title: "Modular architecture", body: "Built to support diverse business types across industries and geographies." },
+    { num: "03", title: "Localized support as a first-class feature", body: "Documentation and support designed for the markets being served, not generic users." }
+  ];
+  IS_LIST = ["Service commerce infrastructure", "Transaction orchestration layer", "Enterprise-grade digital rails", "Vernacular-ready platform"];
+  NOT_LIST = ["Marketplace", "Service aggregator", "Logistics provider", "Consumer app"];
+  ECOSYSTEM = [
+    { name: "Temples & institutions", detail: "Seva bookings · Donations · Events" },
+    { name: "Community halls", detail: "Event slots · Bookings · Payments" },
+    { name: "Artisans & SHGs", detail: "Catalog · Orders · Transaction capture" },
+    { name: "Tiffin & local services", detail: "Subscriptions · Scheduling · Payments" },
+    { name: "Homestays & tourism", detail: "Discovery · Booking · Rural travel" },
+    { name: "Women entrepreneurs", detail: "Digital presence · Payment access" }
+  ];
+  OUTCOMES = [
+    "Improved onboarding completion rates through simplified flows.",
+    "Enabled hundreds of small businesses to establish a digital presence.",
+    "Platform became the foundation for broader digital infrastructure initiatives."
+  ];
+  state = { muted: true };
+  videoRef = React.createRef();
+  toggleMute = () => {
+    const next = !this.state.muted;
+    this.setState({ muted: next }, () => {
+      const v = this.videoRef.current;
+      if (v) { v.muted = next; if (!next) v.play().catch(() => {}); }
+    });
+  };
+  renderVals() {
+    return {
+      videoRef: this.videoRef,
+      toggleMute: this.toggleMute,
+      muteLabel: this.state.muted ? "Unmute" : "Mute",
+      tags: this.TAGS, gapStats: this.GAP_STATS, missing: this.MISSING,
+      transformation: this.TRANSFORMATION, didItems: this.DID_ITEMS, decisions: this.DECISIONS,
+      isList: this.IS_LIST, notList: this.NOT_LIST, ecosystem: this.ECOSYSTEM, outcomes: this.OUTCOMES
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>window.__IMAGE_SLOT_STATE = "../image-slots.state.json";</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="../image-slot.js"></script>
+<style>
+  body { margin:0; background:#101214; color:#F0EBE2; font-family:'Instrument Sans', Helvetica, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#D8B34A; text-decoration:none; }
+  a:hover { color:#EFCC6E; }
+  * { box-sizing:border-box; }
+</style>
+</helmet>
+
+<div style="background:#101214; min-height:100%;">
+
+  <header style="position:sticky; top:0; z-index:20; background:rgba(16,18,20,0.88); backdrop-filter:blur(10px); border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <a href="../index.html" style="font-size:17px; font-weight:700; letter-spacing:-0.01em; color:#F0EBE2;">Geethu <span style="color:#D8B34A;">Rajasekharan</span></a>
+      <nav style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+        <a href="../index.html" style="color:#B7B2A9;">About</a>
+        <a href="../index.html#work" style="color:#D8B34A;">Products</a>
+        <a href="../index.html#contact" style="display:inline-flex; align-items:center; padding:10px 20px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600;">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="position:relative; overflow:hidden; background:linear-gradient(140deg,#1E2126 0%,#15171A 48%,#101214 100%); border-bottom:1px solid #24282D;">
+    <div style="position:absolute; right:-160px; top:-180px; width:620px; height:620px; border-radius:50%; background:rgba(216,179,74,0.10); filter:blur(20px);"></div>
+    <div style="position:relative; max-width:1180px; margin:0 auto; padding:56px 32px 72px;">
+      <a href="../index.html#work" style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#B7B2A9;">← All products</a>
+      <div style="margin-top:36px; display:flex; flex-wrap:wrap; gap:40px; align-items:center;">
+        <div style="flex:1 1 300px; min-width:0;">
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#D8B34A;">Managed IPTV · TiVo, a part of Xperi</div>
+          <h1 style="margin:18px 0 14px; font-size:clamp(38px,5vw,66px); line-height:1; letter-spacing:-0.04em; font-weight:700; color:#F6F2EA;">TiVo IPTV</h1>
+          <p style="margin:0 0 22px; font-size:clamp(19px,2vw,23px); line-height:1.3; font-weight:500; color:#E6DFD2; max-width:30ch; letter-spacing:-0.015em; text-wrap:balance;">One platform. <em style="color:#D8B34A; font-style:italic;">Every operator's own branded TV.</em></p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px;">
+            <sc-for list="{{ tags }}" as="t" hint-placeholder-count="4">
+              <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">{{ t }}</span>
+            </sc-for>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="https://business.tivo.com/products-solutions/managed-iptv-service" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600; font-size:16px;">TiVo product page →</a>
+            <a href="#role" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; border:1px solid #3E434A; color:#F6F2EA; font-weight:600; font-size:16px;">My role</a>
+          </div>
+        </div>
+        <div style="align-self:start; flex:2.2 1 520px; min-width:0; display:flex; flex-direction:column; gap:16px;">
+          <div style="position:relative; aspect-ratio:16 / 9; background:#0C0E10; border:1px solid #282C32; border-radius:24px; overflow:hidden;">
+            <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ true }}">
+              <video ref="{{ videoRef }}" src="{{ videoSrc }}" poster="{{ posterSrc }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;"></video>
+            </sc-if>
+            <sc-if value="{{ showPoster }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ startPlayback }}" aria-label="Play the TiVo IPTV video" style="position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; background:#0C0E10; cursor:pointer; display:block;">
+                <img src="../assets/tivo-video-poster.png" alt="TiVo streaming interface on a TV" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
+                <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,10,12,0.08) 0%,rgba(8,10,12,0.52) 100%);"></span>
+                <span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:inline-flex; align-items:center; gap:12px; padding:14px 26px 14px 20px; border-radius:999px; border:1px solid rgba(240,235,226,0.28); background:rgba(16,18,20,0.72); backdrop-filter:blur(10px); color:#F0EBE2; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase;">
+                  <span style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:#D8B34A; color:#1B1A15; font-size:13px;">▶</span>Play video
+                </span>
+              </button>
+            </sc-if>
+            <sc-if value="{{ isPlaying }}">
+              <iframe src="{{ driveEmbed }}" allow="autoplay; fullscreen" allowFullScreen="{{ true }}" title="TiVo Managed IPTV video" style="position:absolute; inset:0; width:100%; height:100%; border:0; display:block;"></iframe>
+            </sc-if>
+            <sc-if value="{{ noVideo }}">
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:24px;">
+                <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#4B5057;">1920 × 1080 · 16:9</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ hasVideo }}">
+              <button type="button" onClick="{{ toggleMute }}" aria-label="{{ muteLabel }}" style="position:absolute; right:14px; bottom:14px; display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border:1px solid rgba(240,235,226,0.24); border-radius:999px; background:rgba(16,18,20,0.66); backdrop-filter:blur(8px); color:#F0EBE2; font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;" style-hover="background:rgba(216,179,74,0.92); color:#1B1A15; border-color:#D8B34A;">{{ muteLabel }}</button>
+            </sc-if>
+          </div>
+          <p style="margin:0; font-size:17px; line-height:1.7; color:#B7B2A9; max-width:66ch; text-wrap:pretty;">A customizable, cloud-enabled, end-to-end streaming video solution that lets operators launch a fully branded, fully compliant, full-featured service across a range of streaming devices.</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr)); gap:12px;">
+            <div style="padding:14px 16px; border:1px solid #3E434A; border-radius:14px; background:linear-gradient(140deg,#20232A 0%,#15171A 100%);"><div style="font-size:22px; font-weight:700; color:#D8B34A; letter-spacing:-0.03em; line-height:1;">90 days</div><div style="margin-top:6px; font-size:13px; line-height:1.4; color:#B7B2A9;">contract to revenue</div></div>
+            <div style="padding:14px 16px; border:1px solid #3E434A; border-radius:14px; background:linear-gradient(140deg,#20232A 0%,#15171A 100%);"><div style="font-size:22px; font-weight:700; color:#D8B34A; letter-spacing:-0.03em; line-height:1;">Zero</div><div style="margin-top:6px; font-size:13px; line-height:1.4; color:#B7B2A9;">truck rolls or set-top boxes</div></div>
+            <div style="padding:14px 16px; border:1px solid #3E434A; border-radius:14px; background:linear-gradient(140deg,#20232A 0%,#15171A 100%);"><div style="font-size:22px; font-weight:700; color:#D8B34A; letter-spacing:-0.03em; line-height:1;">Any device</div><div style="margin-top:6px; font-size:13px; line-height:1.4; color:#B7B2A9;">BYOD streaming, mobile, web</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#141619; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">Benefits</div>
+      <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:26ch; text-wrap:balance;">Why operators choose a TiVO IPTV service.</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:16px;">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+          <article style="position:relative; overflow:hidden; background:#191C20; border:1px solid #282C32; border-radius:24px; padding:30px 28px; display:flex; flex-direction:column; gap:10px;">
+            <div style="position:absolute; right:-40px; top:-40px; width:140px; height:140px; border-radius:50%; background:rgba(216,179,74,0.06);"></div>
+            <h3 style="margin:0; font-size:20px; letter-spacing:-0.02em; font-weight:700; color:#F6F2EA;">{{ b.title }}</h3>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#B7B2A9;">{{ b.body }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">The experience</div>
+    <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">What subscribers get.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:16px;">
+      <sc-for list="{{ experience }}" as="e" hint-placeholder-count="4">
+        <article style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:30px 28px; display:flex; flex-direction:column; gap:12px;">
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; color:#8D8881;">{{ e.num }}</div>
+          <h3 style="margin:0; font-size:21px; letter-spacing:-0.02em; font-weight:700; color:#F6F2EA; line-height:1.25;">{{ e.title }}</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#B7B2A9;">{{ e.body }}</p>
+        </article>
+      </sc-for>
+    </div>
+    <div style="margin-top:20px; background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden;">
+      <div style="aspect-ratio:16 / 7;"><image-slot id="tivo-ui" shape="rect" style="width:100%; height:100%;" placeholder="Operator-branded TV UI across devices"></image-slot></div>
+    </div>
+  </section>
+
+  <section id="role" style="background:#141619; border-top:1px solid #24282D; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">My role</div>
+      <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:28ch; text-wrap:balance;">Technical Product Manager &amp; Staff Engineer</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:16px; align-items:stretch;">
+        <sc-if value="{{ hasRoleCopy }}">
+          <div style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:32px 30px; display:flex; flex-direction:column; gap:14px;">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:500; color:#D8B34A;">What I owned</div>
+            <p style="margin:0; font-size:16px; line-height:1.65; color:#C9C4BC; text-wrap:pretty;">{{ roleCopy }}</p>
+          </div>
+        </sc-if>
+        <div style="align-self:start; min-height:260px; aspect-ratio:16 / 9; background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden; display:flex; padding:12px;">
+          <image-slot id="tivo-role" shape="rect" fit="contain" style="width:100%; height:100%;" placeholder="Platform architecture / operator launch diagram"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">Monetization</div>
+    <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:26ch; text-wrap:balance;">Data-rich, monetizable, ready to scale.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:16px;">
+      <sc-for list="{{ scale }}" as="s" hint-placeholder-count="3">
+        <div style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:30px 28px;">
+          <h3 style="margin:0 0 10px; font-size:19px; letter-spacing:-0.02em; font-weight:700; color:#F6F2EA;">{{ s.title }}</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#B7B2A9;">{{ s.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:24px 32px 88px;">
+    <div style="background:linear-gradient(140deg,#20232A 0%,#15171A 100%); border:1px solid #2C3036; border-radius:28px; padding:64px 40px; text-align:center;">
+      <h2 style="margin:0 auto 18px; max-width:24ch; font-size:clamp(28px,3.6vw,42px); line-height:1.1; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; text-wrap:balance;">Want the platform story?</h2>
+      <p style="margin:0 auto 30px; max-width:52ch; font-size:17px; line-height:1.65; color:#B7B2A9;">Happy to walk through multi-tenant architecture, operator onboarding, and how launches were compressed.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a href="https://business.tivo.com/products-solutions/managed-iptv-service" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600; font-size:16px;">TiVo product page →</a>
+        <a href="../index.html#contact" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; border:1px solid #3E434A; color:#F6F2EA; font-weight:600; font-size:16px;">Get in touch</a>
+      </div>
+    </div>
+    <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; font-size:15px;">
+      <a href="./via-agent.html">← Previous · VIA Agent</a>
+      <a href="../index.html#work">All products →</a>
+    </div>
+    <div style="margin-top:22px; text-align:center; font-size:14px; color:#7C776F;">© 2026 Geethu Rajasekharan · AI Product Manager</div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;videoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://drive.google.com/file/d/1rky6dJs7y_Ff5kOhBUG1V906V4Kj46KA/view?usp=sharing&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero video&quot;},&quot;posterUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero video&quot;},&quot;roleCopy&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;My role&quot;}}">
+class Component extends DCLogic {
+  state = { muted: true, playing: false };
+  startPlayback = () => this.setState({ playing: true });
+  videoRef = React.createRef();
+  toggleMute = () => {
+    const next = !this.state.muted;
+    this.setState({ muted: next }, () => {
+      const v = this.videoRef.current;
+      if (v) { v.muted = next; if (!next) v.play().catch(() => {}); }
+    });
+  };
+  TAGS = ["Multi-tenant platform", "Cloud DVR", "App-based delivery", "Ad insertion"];
+  BENEFITS = [
+    { title: "Stay competitive", body: "Level up an existing cable service or add a premium video bundle for broadband subscribers." },
+    { title: "Retain customers", body: "A sticky offering that reduces churn with the modern features subscribers expect." },
+    { title: "Get to market quickly", body: "Low-touch, fully managed — contract to revenue in as little as 90 days." },
+    { title: "Minimize video costs", body: "No truck rolls, no set-top boxes — delivered to subscribers' own devices as an app." }
+  ];
+  EXPERIENCE = [
+    { num: "01", title: "Modern, user-friendly streaming TV", body: "Operator-branded and app-based, easy to set up for every demographic — from first-time video subscribers to cord cutters." },
+    { num: "02", title: "Available anywhere, any device", body: "Delivers the anytime-anywhere promise across BYOD streaming devices, phones, tablets, and web." },
+    { num: "03", title: "All the content they love", body: "Familiar live TV, upgraded with cloud DVR and video on demand — local news and sports in HD included." },
+    { num: "04", title: "Built for households", body: "One offering that works for the whole family, on the go, or on a movie night at the grandparents'." }
+  ];
+  SCALE = [
+    { title: "Ad insertion", body: "Revenue-generating opportunities as a new, low-touch revenue stream." },
+    { title: "Analytics", body: "Trends in adoption, retention, and behaviour made legible for growth decisions." },
+    { title: "Hands-on support", body: "Account, support, and marketing teams engaged in scaling each operator's business." }
+  ];
+  renderVals() {
+    const raw = (this.props.videoUrl ?? "https://drive.google.com/file/d/1rky6dJs7y_Ff5kOhBUG1V906V4Kj46KA/view?usp=sharing").trim();
+    const driveMatch = raw.match(/drive\.google\.com\/file\/d\/([\w-]+)/) || (/^[\w-]{20,}$/.test(raw) ? [null, raw] : null);
+    const driveId = driveMatch ? driveMatch[1] : "";
+    const videoSrc = driveId ? "" : raw;
+    const useIframe = !!driveId;
+    const roleCopy = (this.props.roleCopy || "").trim();
+    return {
+      roleCopy, hasRoleCopy: !!roleCopy,
+      videoRef: this.videoRef, toggleMute: this.toggleMute,
+      muteLabel: this.state.muted ? "Unmute" : "Mute",
+      videoSrc, hasVideo: !!videoSrc, noVideo: !videoSrc && !useIframe,
+      hasDrive: useIframe,
+      showPoster: useIframe && !this.state.playing,
+      isPlaying: useIframe && this.state.playing,
+      startPlayback: this.startPlayback,
+      driveEmbed: driveId ? "https://drive.google.com/file/d/" + driveId + "/preview" : "",
+      posterSrc: (this.props.posterUrl || "").trim() || undefined,
+      tags: this.TAGS, benefits: this.BENEFITS, experience: this.EXPERIENCE,
+      scale: this.SCALE
+    };
+  }
+}
+</script>
+</body>
+</html>

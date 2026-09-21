@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>window.__IMAGE_SLOT_STATE = "../image-slots.state.json";</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="../image-slot.js"></script>
+<style>
+  body { margin:0; background:#101214; color:#F0EBE2; font-family:'Instrument Sans', Helvetica, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#D8B34A; text-decoration:none; }
+  a:hover { color:#EFCC6E; }
+  * { box-sizing:border-box; }
+</style>
+</helmet>
+
+<div style="background:#101214; min-height:100%;">
+
+  <header style="position:sticky; top:0; z-index:20; background:rgba(16,18,20,0.88); backdrop-filter:blur(10px); border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <a href="../index.html" style="font-size:17px; font-weight:700; letter-spacing:-0.01em; color:#F0EBE2;">Geethu <span style="color:#D8B34A;">Rajasekharan</span></a>
+      <nav style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+        <a href="../index.html" style="color:#B7B2A9;">About</a>
+        <a href="../index.html#work" style="color:#D8B34A;">Products</a>
+        <a href="../index.html#contact" style="display:inline-flex; align-items:center; padding:10px 20px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600;">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="position:relative; overflow:hidden; background:linear-gradient(140deg,#1E2126 0%,#15171A 48%,#101214 100%); border-bottom:1px solid #24282D;">
+    <div style="position:absolute; right:-160px; top:-180px; width:620px; height:620px; border-radius:50%; background:rgba(216,179,74,0.10); filter:blur(20px);"></div>
+    <div style="position:relative; max-width:1180px; margin:0 auto; padding:56px 32px 72px;">
+      <a href="../index.html#work" style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#B7B2A9;">← All products</a>
+      <div style="margin-top:36px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:48px; align-items:center;">
+        <div>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#D8B34A;">Conversational engine · Parinaamaa.AI</div>
+          <h1 style="margin:18px 0 14px; font-size:clamp(44px,6vw,80px); line-height:0.98; letter-spacing:-0.04em; font-weight:700; color:#F6F2EA;">VIA</h1>
+          <p style="margin:0 0 24px; font-size:clamp(19px,2vw,24px); line-height:1.3; font-weight:500; color:#E6DFD2; max-width:30ch; letter-spacing:-0.015em; text-wrap:balance;">Designed for interaction. <em style="color:#D8B34A; font-style:italic;">Built for completion.</em></p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
+            <sc-for list="{{ tags }}" as="t" hint-placeholder-count="4">
+              <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">{{ t }}</span>
+            </sc-for>
+          </div>
+          <p style="margin:0 0 24px; font-size:17px; line-height:1.7; color:#B7B2A9; max-width:52ch; text-wrap:pretty;">A conversational transaction engine. Instead of navigating complex forms, users ask, understand, and act — completing discovery, decisions, bookings and payments through voice and messaging.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="https://www.parinaamaa.ai/via.html" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600; font-size:16px;">Visit VIA →</a>
+            <a href="#gap" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; border:1px solid #3E434A; color:#F6F2EA; font-weight:600; font-size:16px;">The problem</a>
+          </div>
+        </div>
+        <div style="justify-self:center; align-self:start; width:max-content; max-width:100%; background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden;">
+          <div style="position:relative; display:flex;">
+            <video ref="{{ videoRef }}" src="../uploads/rudra.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="display:block; width:auto; height:auto; max-width:100%; max-height:calc(100vh - 210px);"></video>
+            <button type="button" onClick="{{ toggleMute }}" aria-label="{{ muteLabel }}" style="position:absolute; right:14px; bottom:14px; display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border:1px solid rgba(240,235,226,0.24); border-radius:999px; background:rgba(16,18,20,0.66); backdrop-filter:blur(8px); color:#F0EBE2; font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;" style-hover="background:rgba(216,179,74,0.92); color:#1B1A15; border-color:#D8B34A;">{{ muteLabel }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gap" style="background:#141619; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">THE DIGITAL CONVERSION GAP</div>
+      <h2 style="margin:14px 0 10px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:26ch; text-wrap:balance;">The demand is there. The journey loses it.</h2>
+      <p style="margin:0 0 32px; font-size:17px; line-height:1.6; color:#A8A49E; max-width:62ch;">Enterprises already have the databases, the portals, the apps, and the demand. Transactions still fail.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:16px;">
+        <sc-for list="{{ barriers }}" as="b" hint-placeholder-count="4">
+          <div style="background:#191C20; border:1px solid #282C32; border-radius:20px; padding:26px 24px; display:flex; flex-direction:column; gap:10px;">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; color:#8D8881;">{{ b.num }}</div>
+            <div style="font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#F6F2EA; line-height:1.3;">{{ b.title }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:16px;">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="3">
+          <div style="border:1px solid #3E434A; border-radius:20px; padding:26px 24px; background:linear-gradient(140deg,#20232A 0%,#15171A 100%);">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#8D8881;">The result</div>
+            <div style="margin-top:10px; font-size:19px; font-weight:700; letter-spacing:-0.02em; color:#D8B34A; line-height:1.25;">{{ r }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">THE PLATFORM</div>
+    <h2 style="margin:14px 0 32px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; max-width:24ch; text-wrap:balance;">Conversation, all the way to completion.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:16px;">
+      <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="6">
+        <article style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:28px 26px; display:flex; flex-direction:column; gap:10px;">
+          <h3 style="margin:0; font-size:19px; letter-spacing:-0.02em; font-weight:700; color:#F6F2EA;">{{ c.name }}</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#B7B2A9;">{{ c.body }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#141619; border-top:1px solid #24282D; border-bottom:1px solid #24282D;">
+    <div style="max-width:1180px; margin:0 auto; padding:72px 32px 80px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">ARCHITECTURE</div>
+      <h2 style="margin:14px 0 10px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">How VIA works</h2>
+      <p style="margin:0 0 32px; font-size:17px; line-height:1.6; color:#A8A49E; max-width:62ch;">A layer on top of existing enterprise infrastructure — no changes to the platforms underneath.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px;">
+        <sc-for list="{{ layers }}" as="l" hint-placeholder-count="3">
+          <div style="background:#191C20; border:1px solid #282C32; border-radius:24px; padding:28px 26px;">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:500; color:#D8B34A;">{{ l.name }}</div>
+            <div style="margin-top:16px; display:flex; flex-direction:column; gap:10px;">
+              <sc-for list="{{ l.items }}" as="it" hint-placeholder-count="4">
+                <div style="font-size:15px; line-height:1.5; color:#C9C4BC;">{{ it }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:20px; background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden;">
+        <div style="aspect-ratio:16 / 7;"><image-slot id="via-architecture" shape="rect" style="width:100%; height:100%;" placeholder="VIA architecture diagram"></image-slot></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:72px 32px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#D8B34A;">TARGETING</div>
+    <h2 style="margin:14px 0 10px; font-size:clamp(30px,3.6vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA;">Where VIA delivers value</h2>
+    <p style="margin:0 0 32px; font-size:17px; line-height:1.6; color:#A8A49E; max-width:66ch; text-wrap:pretty;">Organizations serving large customer bases, operating in rural or vernacular markets, running recurring campaigns, or carrying heavy support-center load.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:14px;">
+      <sc-for list="{{ sectors }}" as="s" hint-placeholder-count="5">
+        <div style="background:#191C20; border:1px solid #282C32; border-radius:20px; padding:24px 22px; font-size:17px; font-weight:700; letter-spacing:-0.015em; color:#F6F2EA; line-height:1.3;">{{ s }}</div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:24px 32px 88px;">
+    <div style="background:linear-gradient(140deg,#20232A 0%,#15171A 100%); border:1px solid #2C3036; border-radius:28px; padding:64px 40px; text-align:center;">
+      <h2 style="margin:0 auto 18px; max-width:24ch; font-size:clamp(28px,3.6vw,42px); line-height:1.1; letter-spacing:-0.03em; font-weight:700; color:#F6F2EA; text-wrap:balance;">Ready to bridge the gap?</h2>
+      <p style="margin:0 auto 30px; max-width:52ch; font-size:17px; line-height:1.65; color:#B7B2A9;">Happy to walk through the agent design, the evaluation approach, and how VIA layers onto existing systems.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a href="https://www.parinaamaa.ai/via.html" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; background:#D8B34A; color:#1B1A15; font-weight:600; font-size:16px;">Visit VIA →</a>
+        <a href="../index.html#contact" style="display:inline-flex; align-items:center; padding:14px 26px; border-radius:999px; border:1px solid #3E434A; color:#F6F2EA; font-weight:600; font-size:16px;">Get in touch</a>
+      </div>
+    </div>
+    <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; font-size:15px;">
+      <a href="./naamaa-platform.html">← Previous · Naamaa Platform</a>
+      <a href="../index.html#work">All products →</a>
+    </div>
+    <div style="margin-top:22px; text-align:center; font-size:14px; color:#7C776F;">© 2026 Geethu Rajasekharan · AI Product Manager</div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { muted: true };
+  videoRef = React.createRef();
+  toggleMute = () => {
+    const next = !this.state.muted;
+    this.setState({ muted: next }, () => {
+      const v = this.videoRef.current;
+      if (v) { v.muted = next; if (!next) v.play().catch(() => {}); }
+    });
+  };
+  TAGS = ["Conversational engine", "Voice + messaging", "Multilingual", "Enterprise layer"];
+  BARRIERS = [
+    { num: "01", title: "Complex digital journeys" },
+    { num: "02", title: "Language barriers" },
+    { num: "03", title: "No guidance during booking or payment" },
+    { num: "04", title: "Low digital confidence among users" }
+  ];
+  RESULTS = ["High drop-offs", "Incomplete transactions", "Rising call-center load"];
+  CAPABILITIES = [
+    { name: "Conversational engagement", body: "Voice and text interactions that help users understand services and take action." },
+    { name: "Guided transactions", body: "Bookings, registrations, and payments completed through conversational flows." },
+    { name: "Multilingual interaction", body: "Support for multiple languages to reach vernacular users." },
+    { name: "Campaign management", body: "Conversational outreach campaigns to inform and engage customers." },
+    { name: "Outbound engagement", body: "Notifications, reminders, and service updates that start conversations." },
+    { name: "Automated follow-ups", body: "Reminders for bookings, events, and services." }
+  ];
+  LAYERS = [
+    { name: "Channels", items: ["WhatsApp", "Voice", "Web chat", "Social messaging"] },
+    { name: "VIA conversational engine", items: ["Intent understanding", "Conversation orchestration", "Campaign management", "Transaction workflows"] },
+    { name: "Systems", items: ["CRM", "Booking systems", "ERP", "Payment systems"] }
+  ];
+  SECTORS = ["Healthcare networks", "Religious institutions", "Education platforms", "Service enterprises", "Government-linked services"];
+  renderVals() {
+    return {
+      videoRef: this.videoRef, toggleMute: this.toggleMute,
+      muteLabel: this.state.muted ? "Unmute" : "Mute",
+      tags: this.TAGS, barriers: this.BARRIERS, results: this.RESULTS,
+      capabilities: this.CAPABILITIES, layers: this.LAYERS, sectors: this.SECTORS
+    };
+  }
+}
+</script>
+</body>
+</html>
