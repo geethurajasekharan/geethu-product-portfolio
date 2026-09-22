@@ -16,6 +16,7 @@ Static site. No build step, no dependencies. All paths are relative — deploy t
     image-slots.state.json        Image manifest for index.html
     pages/image-slots.state.json  Image manifest for the case-study pages
     assets/portrait.png           Portrait
+    assets/favicon.png            Favicon (256px circular headshot)
     assets/slots/                 All case-study and product-tile images (webp)
     uploads/                      NOT in this zip — add the promo videos yourself:
                                   bragsheet-pitch.mp4, rudra.mp4,
