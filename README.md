@@ -17,8 +17,9 @@ Static site. No build step, no dependencies. All paths are relative — deploy t
     pages/image-slots.state.json  Image manifest for the case-study pages
     assets/portrait.png           Portrait
     assets/slots/                 All case-study and product-tile images (webp)
-    uploads/                      Promo videos (bragsheet-pitch.mp4, rudra.mp4,
-                                  via-agent-demo.mp4, tivo-sizzle.mp4)
+    uploads/                      NOT in this zip — add the promo videos yourself:
+                                  bragsheet-pitch.mp4, rudra.mp4,
+                                  via-agent-demo.mp4, tivo-sizzle.mp4
     netlify.toml                  Netlify config (publish root, no build)
 
 ## Run locally

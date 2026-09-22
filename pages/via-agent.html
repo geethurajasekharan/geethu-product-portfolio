@@ -45,9 +45,10 @@
           <h1 style="margin:18px 0 14px; font-size:clamp(44px,6vw,80px); line-height:0.98; letter-spacing:-0.04em; font-weight:700; color:#F6F2EA;">VIA</h1>
           <p style="margin:0 0 24px; font-size:clamp(19px,2vw,24px); line-height:1.3; font-weight:500; color:#E6DFD2; max-width:30ch; letter-spacing:-0.015em; text-wrap:balance;">Designed for interaction. <em style="color:#D8B34A; font-style:italic;">Built for completion.</em></p>
           <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
-            <sc-for list="{{ tags }}" as="t" hint-placeholder-count="4">
-              <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">{{ t }}</span>
-            </sc-for>
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;"><span style="color: C9C4BC; font-size: 12px; letter-spacing: 1.92px">PRODUCT MANAGER</span></span><span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">AGENTIC AI</span>
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">PRICING</span>
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:7px 13px; border-radius:999px; border:1px solid #3E434A; color:#C9C4BC;">FEATURE DISCOVERY</span>
+            
           </div>
           <p style="margin:0 0 24px; font-size:17px; line-height:1.7; color:#B7B2A9; max-width:52ch; text-wrap:pretty;">A conversational transaction engine. Instead of navigating complex forms, users ask, understand, and act — completing discovery, decisions, bookings and payments through voice and messaging.</p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
@@ -120,7 +121,7 @@
         </sc-for>
       </div>
       <div style="margin-top:20px; background:#191C20; border:1px solid #282C32; border-radius:24px; overflow:hidden;">
-        <div style="aspect-ratio:16 / 7;"><image-slot id="via-architecture" shape="rect" style="width:100%; height:100%;" placeholder="VIA architecture diagram"></image-slot></div>
+        
       </div>
     </div>
   </section>
@@ -165,7 +166,7 @@ class Component extends DCLogic {
       if (v) { v.muted = next; if (!next) v.play().catch(() => {}); }
     });
   };
-  TAGS = ["Conversational engine", "Voice + messaging", "Multilingual", "Enterprise layer"];
+  TAGS = ["Conversational engine", "Voice + messaging", "Multilingual", "Conversational engine"];
   BARRIERS = [
     { num: "01", title: "Complex digital journeys" },
     { num: "02", title: "Language barriers" },
